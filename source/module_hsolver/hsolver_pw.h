@@ -29,7 +29,7 @@ class HSolverPW : public HSolver<T, Device>
     /// A complete observer follows Davidson basis changes for each k point.
     /// capture receives the first band, count and whether the action comes
     /// from a cache. Cached products are restored before initial_hpsi, so
-    /// their uploads precede any prefetch it starts. Otherwise capture runs
+    /// their uploads precede the Hamiltonian-action restore. Otherwise capture runs
     /// after hPsi, when fresh projector products are available.
     /// rotate receives the old basis size, Ritz coefficients,
     /// leading dimension and final/restart flag. invalidate precedes a
